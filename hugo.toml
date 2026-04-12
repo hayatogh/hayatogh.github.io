@@ -5,3 +5,7 @@ title = 'hayato のメモ'
 [module]
 [[module.imports]]
 path = 'github.com/alex-shpak/hugo-book'
+
+[caches]
+[caches.images]
+dir = ':cacheDir/images'
