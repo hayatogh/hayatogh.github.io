@@ -1,0 +1,26 @@
+.copy-code-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 6px;
+  background-color: transparent;
+  color: $term252;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.copy-code-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: $term81;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.copy-icon {
+  width: 18px;
+  height: 18px;
+}
