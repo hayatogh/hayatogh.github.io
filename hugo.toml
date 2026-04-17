@@ -9,3 +9,8 @@ path = 'github.com/alex-shpak/hugo-book'
 [caches]
 [caches.images]
 dir = ':cacheDir/images'
+
+[markup]
+[markup.highlight]
+noClasses = false
+tabWidth = 8

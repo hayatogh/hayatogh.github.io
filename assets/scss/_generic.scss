@@ -1,0 +1,9 @@
+/*
+ * Setting markup.highlight.tabWidth (Default: 4) to 8 in hugo.toml just leaves
+ * tab-size unset.
+ * And hugo-book/assets/normalize.css defines it as 4.
+ * To make it 8, it need to be overridden it here .
+ */
+html {
+  tab-size: 8;
+}

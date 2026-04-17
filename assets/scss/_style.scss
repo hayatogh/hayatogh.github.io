@@ -1,0 +1,64 @@
+/*
+ * Based on Molokai color scheme for Vim (https://github.com/tomasr/molokai)
+ * This looks similar to the original at least in C.
+ */
+
+/* Background */ .bg { color:$term252; background-color:$term233 !important; }
+/* PreWrapper */ .chroma { color:$term252; background-color:$term233 !important; -webkit-text-size-adjust:none; }
+/* Error */ .chroma .err { color:$term219; background-color:$term89 }
+/* LineLink */ .chroma .lnlinks { outline:none; text-decoration:none; color:inherit }
+/* LineTableTD */ .chroma .lntd { vertical-align:top; padding:0; margin:0; border:0; }
+/* LineTable */ .chroma .lntable { border-spacing:0; padding:0; margin:0; border:0; }
+/* LineHighlight */ .chroma .hl { background-color:#3c3d38 }
+/* LineNumbersTable */ .chroma .lnt { white-space:pre; -webkit-user-select:none; user-select:none; margin-right:0.4em; padding:0 0.4em 0 0.4em; color:$term250; background-color:$term236 }
+/* LineNumbers */ .chroma .ln { white-space:pre; -webkit-user-select:none; user-select:none; margin-right:0.4em; padding:0 0.4em 0 0.4em; color:$term250; background-color:$term236 }
+/* Line */ .chroma .line { display:flex; }
+/* Keyword */ .chroma .k { font-weight:bold; color:$term161 }
+/* KeywordConstant */ .chroma .kc { color:$term135 }
+/* KeywordDeclaration */ .chroma .kd { font-weight:bold; color:$term161 }
+/* KeywordNamespace */ .chroma .kn { color:$term118 }
+/* KeywordReserved */ .chroma .kr { color:$term81 }
+/* KeywordType */ .chroma .kt { color:$term81 }
+/* NameBuiltin */ .chroma .nb { font-weight:bold; color:$term135 }
+/* NameBuiltinPseudo */ .chroma .bp { font-weight:bold; color:$term135 }
+/* NameClass */ .chroma .nc { color:$term118 }
+/* NameConstant */ .chroma .no { font-weight:bold; color:$term161 }
+/* NameFunctionMagic */ .chroma .fm { color:$term118 }
+/* NameLabel */ .chroma .nl { color:$term229 }
+/* Literal */ .chroma .l { color:$term144 }
+/* LiteralDate */ .chroma .ld { color:$term144 }
+/* LiteralString */ .chroma .s { color:$term144 }
+/* LiteralStringAffix */ .chroma .sa { color:$term144 }
+/* LiteralStringBacktick */ .chroma .sb { color:$term144 }
+/* LiteralStringChar */ .chroma .sc { color:$term144 }
+/* LiteralStringDelimiter */ .chroma .dl { color:$term144 }
+/* LiteralStringDoc */ .chroma .sd { color:$term144 }
+/* LiteralStringDouble */ .chroma .s2 { color:$term144 }
+/* LiteralStringEscape */ .chroma .se { color:$term81 }
+/* LiteralStringHeredoc */ .chroma .sh { color:$term144 }
+/* LiteralStringInterpol */ .chroma .si { color:$term144 }
+/* LiteralStringOther */ .chroma .sx { color:$term144 }
+/* LiteralStringRegex */ .chroma .sr { color:$term144 }
+/* LiteralStringSingle */ .chroma .s1 { color:$term144 }
+/* LiteralStringSymbol */ .chroma .ss { color:$term81 }
+/* LiteralNumber */ .chroma .m { color:$term135 }
+/* LiteralNumberBin */ .chroma .mb { color:$term135 }
+/* LiteralNumberFloat */ .chroma .mf { color:$term135 }
+/* LiteralNumberHex */ .chroma .mh { color:$term135 }
+/* LiteralNumberInteger */ .chroma .mi { color:$term135 }
+/* LiteralNumberIntegerLong */ .chroma .il { color:$term135 }
+/* LiteralNumberOct */ .chroma .mo { color:$term135 }
+/* Operator */ .chroma .o { color:$term252 }
+/* OperatorWord */ .chroma .ow { color:$term161 }
+/* Comment */ .chroma .c { color:$term59 }
+/* CommentHashbang */ .chroma .ch { color:$term59 }
+/* CommentMultiline */ .chroma .cm { color:$term59 }
+/* CommentSingle */ .chroma .c1 { color:$term59 }
+/* CommentSpecial */ .chroma .cs { color:$term59 }
+/* CommentPreproc */ .chroma .cp { color:$term118 }
+/* CommentPreprocFile */ .chroma .cpf { color:$term144 }
+/* GenericDeleted */ .chroma .gd { color:$term9 }
+/* GenericEmph */ .chroma .ge { font-style:italic }
+/* GenericInserted */ .chroma .gi { color:$term10 }
+/* GenericStrong */ .chroma .gs { color:$term12 }
+/* GenericSubheading */ .chroma .gu { font-weight:bold; color:$term161 }
