@@ -1,5 +1,9 @@
-.PHONY: all update clean
+.PHONY: all nodraft update clean
+
 all:
+	hugo server -D --minify
+
+nodraft:
 	hugo server --minify
 
 update:
