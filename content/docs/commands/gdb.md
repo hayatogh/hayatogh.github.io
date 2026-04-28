@@ -37,4 +37,29 @@ info sharedlibrary
 gdb -x gdbinit
 ```
 
+```bash
+# Set the maximum size of core files unlimited
+ulimit -c unlimited
+
+# To generate a core from a running process
+sudo gcore $PID
+
+# When an app crashes, systemd-coredump enabled systems save coredumps as
+/var/lib/systemd/coredump/core.appname.boot_id
+
+coredumpctl info
+coredumpctl info $PID
+coredumpctl gdb $PID
+coredumpctl -o core.$PID dump $PID
+```
+
 [Files (Debugging with GDB)](https://sourceware.org/gdb/current/onlinedocs/gdb.html/Files.html)
+
+[gcore(1)](https://www.man7.org/linux/man-pages/man1/gcore.1.html)
+
+[coredumpctl(1)](https://www.man7.org/linux/man-pages/man1/coredumpctl.1.html)
+[systemd-coredump(8)](https://www.man7.org/linux/man-pages/man8/systemd-coredump.8.html)
+[coredump.conf(5)](https://www.man7.org/linux/man-pages/man5/coredump.conf.5.html)
+
+[core(5)](https://man7.org/linux/man-pages/man5/core.5.html)\
+systemd-coredump utilizes /proc/sys/kernel/core\_pattern to process coredumps
