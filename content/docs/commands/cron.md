@@ -24,7 +24,8 @@ defines and stores user crontab in /var/spool/cron.
 [anacrontab(5)](https://www.man7.org/linux/man-pages/man5/anacrontab.5.html)
 file format manuals.
 
-- Debian uses ISC cron and anacron in separate repositories.
+- Debian uses [Vixie cron](https://salsa.debian.org/debian/cron) and [anacron](https://salsa.debian.org/debian/anacron) in separate repositories.\
+  Detailed Debian cron state is described in [Time-based job scheduling in Debian (cron and friends)](https://wiki.debian.org/cron/).
 - Fedora uses [cronie](https://github.com/cronie-crond/cronie) for both.
 - There is also systemd-cron; it utilizes systemd but is not in the official repository,
-  which may be worth noting given its name.
+  which may be worth noting given its name.  The semantics may differ.

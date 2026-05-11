@@ -75,3 +75,6 @@ and more on [libguestfs.org](https://libguestfs.org/)
 [virt-manager(1)](https://github.com/virt-manager/virt-manager/blob/main/man/virt-manager.rst)
 
 [qemu-img(1)](https://www.qemu.org/docs/master/tools/qemu-img.html)
+
+[libvirt - Debian Wiki](https://wiki.debian.org/libvirt)
+lists available tools and packages.
