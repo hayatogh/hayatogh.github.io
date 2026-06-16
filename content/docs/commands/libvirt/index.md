@@ -11,12 +11,25 @@ weight: 1
 # bookIcon: ''
 ---
 
+## Libvirt basics
+
 ```bash
-# Enable libvirt commands
+# Enable system-level libvirt commands, like accessing the 'default' network
 sudo usermod -aG libvirt USER
-export LIBVIRT_DEFAULT_URL=qemu:///system
+export LIBVIRT_DEFAULT_URI=qemu:///system
+# Logout and login so that the group addition takes effect
+# After that, you can access 'default' network without sudo.
+virsh net-start default
+virsh net-autostart default
 # Let qemu read files in your HOME
 chmod o+x ~
+# Install and configure libvirt NSS module
+# Add at least 'libvirt_guest' after 'files' on hosts line
+sudo apt install libnss-libvirt
+sudoedit /etc/nsswitch.conf
+# Or
+sudo dnf install libvirt-nss
+sudo authselect enable-feature with-libvirt
 
 # Basic
 virsh list --all
@@ -35,6 +48,9 @@ virt-install --name NEWGUEST --memory 8192 --vcpus 4 --cpu host-model \
 	--network network=default,bus=virtio \
 	--graphics none \
 	--serial pty
+# With optional kickstart:
+# --initrd-inject=/path/to/my.ks --extra-args "ks=file:/my.ks console=ttyS0"
+# sed -i '/^#PermitRootLogin prohibit-password$/a PermitRootLogin yes' /etc/ssh/sshd_config
 
 # Editing
 virsh edit DOMAIN
@@ -61,6 +77,7 @@ ls /var/lib/libvirt/images
 ```
 
 [libvirt: Domain XML format](https://libvirt.org/formatdomain.html)\
+[libvirt: Libvirt NSS module](https://libvirt.org/nss.html)\
 [virsh(1)](https://www.libvirt.org/manpages/virsh.html)
 
 [virt-edit(1)](https://libguestfs.org/virt-edit.1.html)
@@ -78,3 +95,35 @@ and more on [libguestfs.org](https://libguestfs.org/)
 
 [libvirt - Debian Wiki](https://wiki.debian.org/libvirt)
 lists available tools and packages.
+
+
+## Cloud-init
+
+Example 1
+
+```yaml {file="cc.yaml"}
+```
+
+```bash {file="install-cc.sh"}
+```
+
+For example, with Ubuntu cloud images, `ssh ubuntu@testvm` to login.
+
+You can ssh with distribution default user, such as `ubuntu` for Ubuntu images, `fedora` for Fedora images.
+And you can use VM name as hostname if you set up nsswitch.
+
+```bash {file="undefine-cc.sh"}
+```
+
+Example 2
+
+```yaml {file="cc-extended.yaml"}
+```
+
+```bash {file="install-cc-ext.sh"}
+```
+
+- I found that number only password in chpasswd somehow failed
+  while testing with Ubuntu cloud images, though setting password is a bad practive anyway.
+
+[Module reference - cloud-init documentation](https://docs.cloud-init.io/en/latest/reference/modules.html)

@@ -1,0 +1,96 @@
+#cloud-config
+runcmd:
+  # Red Hat based
+  - ln -sf /dev/null /etc/motd.d/cockpit
+  - ln -sf /dev/null /etc/motd.d/insights-client
+  - ln -sf /dev/null /etc/issue.d/cockpit.issue
+  # Ubuntu
+  - ln -sf /dev/null /etc/update-motd.d/00-header
+  - ln -sf /dev/null /etc/update-motd.d/10-help-text
+  - ln -sf /dev/null /etc/update-motd.d/50-landscape-sysinfo
+  - ln -sf /dev/null /etc/update-motd.d/50-motd-news
+  - ln -sf /dev/null /etc/update-motd.d/85-fwupd
+  - ln -sf /dev/null /etc/update-motd.d/90-updates-available
+  - ln -sf /dev/null /etc/update-motd.d/91-contract-ua-esm-status
+  - ln -sf /dev/null /etc/update-motd.d/91-release-upgrade
+  - ln -sf /dev/null /etc/update-motd.d/92-unattended-upgrades
+  - ln -sf /dev/null /etc/update-motd.d/95-hwe-eol
+  - ln -sf /dev/null /etc/update-motd.d/97-overlayroot
+  - ln -sf /dev/null /etc/update-motd.d/98-fsck-at-reboot
+  - ln -sf /dev/null /etc/update-motd.d/98-reboot-required
+  - ln -sf /dev/null /etc/legal
+  - mkdir /mnt/{iso,xfstests{,/{test,scratch}}}
+  - /bin/true
+
+hostname: testvm
+prefer_fqdn_over_hostname: false
+
+ssh_pwauth: true
+chpasswd:
+  expire: false
+  users:
+    - {name: root, password: PLAINTEXTNOTPRODUCTION, type: text}
+
+ssh_authorized_keys:
+  - ssh-ed25519 AAAA.... user@localhost
+ssh_genkeytypes: [ed25519]
+disable_root: false
+
+timezone: Asia/Tokyo
+
+users:
+  - default
+  - {name: fsgqa}
+  - {name: 123456-fsgqa}
+  - {name: fsgqa2}
+
+write_files:
+  - path: /etc/issue
+    append: true
+    content: |
+      My IPv4 address is \4
+  - path: /etc/profile.d/proxy.sh
+    content: |
+      export https_proxy=http://192.168.XX.XX:XXXX
+      export http_proxy=$https_proxy
+  - path: /etc/profile.d/xfstests.sh
+    content: |
+      export TEST_DEV=$(readlink -f /dev/disk/by-id/virtio-TESTDEV)
+      export TEST_DIR=/mnt/xfstests/test
+      export SCRATCH_DEV=$(readlink -f /dev/disk/by-id/virtio-SCRATCHDEV)
+      export SCRATCH_MNT=/mnt/xfstests/scratch
+  - path: /etc/fstab
+    append: true
+    content: |
+      /path/to/ISO /mnt/iso iso9660 ro,_netdev,x-systemd.requires-mounts-for=/isos 0 0
+  - path: /root/dnf-install.sh
+    permissions: '0755'
+    content: |
+      #!/bin/bash -x
+
+      ## Inspection tools
+      dnf -y install binutils bpftrace crash gcc gcc-c++ gdb glibc-devel kernel-doc ltrace make man-pages perf sos strace sysstat systemtap trace-cmd tree vim
+
+      ## kernel-debuginfo
+      dnf -y install kernel-debuginfo
+
+      ## LTP
+      dnf -y install gcc git make pkgconf autoconf automake bison flex m4 kernel-headers glibc-headers
+
+      ## xfstests (Skip missing packages)
+      dnf -y --skip-broken install acl attr automake bc dump e2fsprogs fio gawk gcc gdbm-devel git kernel-devel libacl-devel libaio-devel libcap-devel libtool libuuid-devel lvm2 make psmisc python3 quota sed sqlite udftools xfsprogs liburing-devel xfsdump xfsprogs-devel exfatprogs
+
+# Red Hat based
+yum_repos:
+  iso-baseos:
+    name: iso-baseos
+    baseurl: file:///mnt/iso/BaseOS
+    enabled: true
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+    metadata_expire: -1
+  iso-appstream:
+    name: iso-appstream
+    baseurl: file:///mnt/iso/AppStream
+    enabled: true
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+    metadata_expire: -1

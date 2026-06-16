@@ -1,0 +1,9 @@
+#cloud-config
+hostname: testvm
+prefer_fqdn_over_hostname: false
+
+ssh_authorized_keys:
+  - ssh-ed25519 AAAA.... user@localhost
+ssh_genkeytypes: [ed25519]
+
+timezone: Asia/Tokyo
