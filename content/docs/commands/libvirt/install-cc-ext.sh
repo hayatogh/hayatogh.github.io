@@ -11,4 +11,5 @@ virt-install \
 	--disk size=16,serial=SCRATCHDEV \
 	--network network=default,model=virtio \
 	--graphics none \
-	--serial pty
+	--serial pty \
+	# --dry-run --print-xml

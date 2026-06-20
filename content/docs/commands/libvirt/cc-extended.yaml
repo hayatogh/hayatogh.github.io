@@ -80,7 +80,7 @@ write_files:
       ## xfstests (Skip missing packages)
       dnf -y --skip-broken install acl attr automake bc dump e2fsprogs fio gawk gcc gdbm-devel git kernel-devel libacl-devel libaio-devel libcap-devel libtool libuuid-devel lvm2 make psmisc python3 quota sed sqlite udftools xfsprogs liburing-devel xfsdump xfsprogs-devel exfatprogs
 
-# Red Hat based
+# RHEL
 yum_repos:
   iso-baseos:
     name: iso-baseos

@@ -99,7 +99,24 @@ lists available tools and packages.
 
 ## Cloud-init
 
-Example 1
+- Cloud images are convinient even for local libvirt; it's fast to boot, can automatically set hostname and ssh public keys.
+  In other words, you can use cloud images with cloud-init as reproducible snapshots with your preferred settings.
+
+- You can ssh with distribution default user.
+
+  Images | default user's username
+  -|-
+  Ubuntu images | ubuntu
+  Debian images | debian
+  Fedora images | fedora
+  RHEL images   | cloud-user
+
+  You can use VM name as the hostname to ssh if you set up nsswitch.
+  In the example below, with Ubuntu cloud images, `ssh ubuntu@testvm` to login .
+
+### Example 1
+
+Minimal settings with BIOS boot (Works with Ubuntu, Fedora and RHEL images)
 
 ```yaml {file="cc.yaml"}
 ```
@@ -107,15 +124,27 @@ Example 1
 ```bash {file="install-cc.sh"}
 ```
 
-For example, with Ubuntu cloud images, `ssh ubuntu@testvm` to login.
-
-You can ssh with distribution default user, such as `ubuntu` for Ubuntu images, `fedora` for Fedora images.
-And you can use VM name as hostname if you set up nsswitch.
-
 ```bash {file="undefine-cc.sh"}
 ```
 
-Example 2
+### Example 2
+
+UEFI boot (Works with Debian images)
+
+The differences are only `--boot uefi` and `--nvram` respectively.
+
+```bash {file="install-uefi.sh"}
+```
+
+```bash {file="undefine-uefi.sh"}
+```
+
+### Example 3
+
+Extended example
+
+- I found that number only password in chpasswd somehow failed
+  while testing with Ubuntu cloud images, though setting password is a bad practive anyway.
 
 ```yaml {file="cc-extended.yaml"}
 ```
@@ -123,7 +152,14 @@ Example 2
 ```bash {file="install-cc-ext.sh"}
 ```
 
-- I found that number only password in chpasswd somehow failed
-  while testing with Ubuntu cloud images, though setting password is a bad practive anyway.
+```bash {file="undefine-ext.sh"}
+```
+
+### Example 4
+
+```bash {file="vm.sh"}
+```
+
+### Links
 
 [Module reference - cloud-init documentation](https://docs.cloud-init.io/en/latest/reference/modules.html)
