@@ -11,7 +11,7 @@ weight: 1
 # bookIcon: ''
 ---
 
-x86\_64
+x86_64
 
     Integer registers:
       rdi, rsi, rdx, rcx, r8, r9: First six argument values

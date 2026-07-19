@@ -62,4 +62,4 @@ coredumpctl -o core.$PID dump $PID
 [coredump.conf(5)](https://www.man7.org/linux/man-pages/man5/coredump.conf.5.html)
 
 [core(5)](https://man7.org/linux/man-pages/man5/core.5.html)\
-systemd-coredump utilizes /proc/sys/kernel/core\_pattern to process coredumps
+systemd-coredump utilizes /proc/sys/kernel/core_pattern to process coredumps
