@@ -68,4 +68,22 @@ echo '#include <errno.h>' | cc -E -dM -xc - | grep 'define\sE'
 less /usr/include/asm-generic/errno-base.h
 less /usr/include/asm-generic/errno.h
 grep -h 'define\sE' /usr/include/asm-generic/errno{-base,}.h
+
+# Alternative user-defined function
+errno()
+{
+	local word=${1:-}
+	local tmp
+	echo '#include <errno.h>' | cc -E -dM -xc - | grep 'define\sE' | sort -nk3 | grep -w "$word"
+	if [[ $word ]]; then
+		tmp=$(mktemp)
+		cc -xc - -o $tmp <<-EOF
+		#include <stdio.h>
+		#include <errno.h>
+		int main(void) { errno=$word; perror(""); }
+		EOF
+		$tmp
+		rm -f $tmp
+	fi
+}
 ```
