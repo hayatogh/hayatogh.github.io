@@ -19,11 +19,12 @@ Error handling C macros and functions
 #include <err.h>
 #include <errno.h>
 #define errc(eval, code, fmt, ...) do {		\
-	errno = code;				\
+	errno = (code);				\
 	err(eval, fmt, ##__VA_ARGS__);		\
 } while (0)
 err(EXIT_FAILURE, msg);
-errc(EXIT_FAILURE, en, msg)
+errx(EXIT_FAILURE, msg);
+errc(EXIT_FAILURE, en, msg);
 
 /*
  * errc is a BSD utility function.  If you don't define like above,
@@ -32,8 +33,7 @@ errc(EXIT_FAILURE, en, msg)
  * or include as <bsd/err.h>.
  */
 #include <err.h>
-err(EXIT_FAILURE, msg);
-errc(EXIT_FAILURE, en, msg)
+errc(EXIT_FAILURE, en, msg);
 
 /*
  * handle_error and handle_error_en are obtained from Linux man-pages project.
@@ -53,6 +53,25 @@ errc(EXIT_FAILURE, en, msg)
 #include <dlfcn.h>
 #define handle_dlerror() \
 	do { fprintf(stderr, "%s\n", dlerror()); exit(EXIT_FAILURE); } while (0)
+
+/* pthread_exit handling */
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+#include <pthread.h>
+#define pthread_errc(retval, code, fmt, ...) do {		\
+	int errno_ = (code);					\
+	fprintf(stderr, fmt, ##__VA_ARGS__);			\
+	if (errno_ != 0)					\
+		fprintf(stderr, ": %s\n", strerror(errno_));	\
+	else							\
+		fputc('\n', stderr);				\
+	pthread_exit((void *)(retval));				\
+} while (0)
+#define pthread_err(retval, fmt, ...) \
+	pthread_errc(retval, errno, fmt, ##__VA_ARGS__)
+#define pthread_errx(retval, fmt, ...) \
+	pthread_errc(retval, 0, fmt, ##__VA_ARGS__)
 ```
 
 Commands to see errno names and descriptions
