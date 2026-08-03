@@ -15,3 +15,5 @@ zram script
 
 ```sh {file="zram.sh"}
 ```
+
+[zram: Compressed RAM-based block devices — The Linux Kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/blockdev/zram.html)

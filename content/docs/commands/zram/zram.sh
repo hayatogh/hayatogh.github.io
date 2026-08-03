@@ -16,9 +16,7 @@ if [ "${1:-}" = -d ]; then
 fi
 
 # zram setup
-if ! lsmod | grep -q ^zram; then
-	sudo modprobe zram num_devices=1
-fi
+sudo modprobe --first-time zram num_devices=1
 
 echo 1 | sudo tee /sys/block/$ZRAM_DEV/reset
 
