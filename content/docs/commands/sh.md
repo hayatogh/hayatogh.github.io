@@ -46,6 +46,14 @@ sh -c 'echo \\n'
 # Trim preceding and trailing white spaces
 t=${t#${t%%[![:space:]]*}}
 t=${t%${t##*[![:space:]]}}
+
+# Function body doesn't expand to later defined aliases
+#  a expands to c
+alias b=c
+a() { b; }
+# a expands to b, not c
+a() { b; }
+alias b=c
 ```
 
 ## Bash Invocation
