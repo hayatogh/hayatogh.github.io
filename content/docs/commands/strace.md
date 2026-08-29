@@ -67,6 +67,8 @@ timestamps; not for performance but for inspecting by comparing with other timin
 
 There is syscall fault injection functionality.
 
+[strace(1)](https://man7.org/linux/man-pages/man1/strace.1.html)
+
 
 ## Example
 
