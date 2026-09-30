@@ -21,6 +21,6 @@ hostname NAME
 hostnamectl hostname --transient NAME
 ```
 
-[hostnamectl(1)](https://www.man7.org/linux/man-pages/man1/hostnamectl.1.html)
-[hostname(5)](https://www.man7.org/linux/man-pages/man5/hostname.5.html)
-[hostname(1) from net-tools](https://www.man7.org/linux/man-pages/man1/hostname.1.html)
+[hostnamectl(1)](https://man7.org/linux/man-pages/man1/hostnamectl.1.html)
+[hostname(5)](https://man7.org/linux/man-pages/man5/hostname.5.html)
+[hostname(1) from net-tools](https://man7.org/linux/man-pages/man1/hostname.1.html)

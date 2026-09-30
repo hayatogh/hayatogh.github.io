@@ -35,4 +35,4 @@ rename xx xx0 xx??
 grep -c 'pattern' Inputfile
 ```
 
-[csplit(1)](https://www.man7.org/linux/man-pages/man1/csplit.1.html)
+[csplit(1)](https://man7.org/linux/man-pages/man1/csplit.1.html)

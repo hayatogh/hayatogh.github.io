@@ -53,7 +53,7 @@ END {
 awk '/^$/{exit} //' /proc/cpuinfo
 ```
 
-[gawk(1)](https://www.man7.org/linux/man-pages/man1/gawk.1.html)
+[gawk(1)](https://man7.org/linux/man-pages/man1/gawk.1.html)
 
 [mawk(1)](https://invisible-island.net/mawk/manpage/mawk.html)
 is the pre-installed version on Debian

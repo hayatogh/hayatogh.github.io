@@ -66,10 +66,10 @@ draft: true
 - /proc/cpuinfo
 
 
-[proc_vmstat(5)](https://www.man7.org/linux/man-pages/man5/proc_vmstat.5.html)
+[proc_vmstat(5)](https://man7.org/linux/man-pages/man5/proc_vmstat.5.html)
 
-[slabinfo(5)](https://www.man7.org/linux/man-pages/man5/slabinfo.5.html)
+[slabinfo(5)](https://man7.org/linux/man-pages/man5/slabinfo.5.html)
 is a man page for /proc/slabinfo; proc_slabinfo(5) is a shim to slabinfo(5).
 
-[slabtop(1)](https://www.man7.org/linux/man-pages/man1/slabtop.1.html)
+[slabtop(1)](https://man7.org/linux/man-pages/man1/slabtop.1.html)
 is a top like interactive interface for slab information in realtime.

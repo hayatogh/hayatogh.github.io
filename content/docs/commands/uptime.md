@@ -20,4 +20,4 @@ uptime
 # load average is the number of jobs runnable and uninterruptible in the run queue
 ```
 
-[proc_loadavg(5)](https://www.man7.org/linux/man-pages/man5/proc_loadavg.5.html)
+[proc_loadavg(5)](https://man7.org/linux/man-pages/man5/proc_loadavg.5.html)

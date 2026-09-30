@@ -60,6 +60,6 @@ sleep 1
 systemctl start auditd.service
 ```
 
-[auditctl(8)](https://www.man7.org/linux/man-pages/man8/auditctl.8.html)
-[audit.rules(7)](https://www.man7.org/linux/man-pages/man7/audit.rules.7.html)
+[auditctl(8)](https://man7.org/linux/man-pages/man8/auditctl.8.html)
+[audit.rules(7)](https://man7.org/linux/man-pages/man7/audit.rules.7.html)
 have rule examples

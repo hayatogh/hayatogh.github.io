@@ -15,13 +15,13 @@ weight: 1
 - Cares must be taken for SHELL and PATH.
 - No reloading is needed after editing crontabs with ISC cron and cronie.
 
-[cron(8)](https://www.man7.org/linux/man-pages/man8/cron.8.html) daemon man page.
+[cron(8)](https://man7.org/linux/man-pages/man8/cron.8.html) daemon man page.
 
-[crontab(1)](https://www.man7.org/linux/man-pages/man1/crontab.1.html)
+[crontab(1)](https://man7.org/linux/man-pages/man1/crontab.1.html)
 defines and stores user crontab in /var/spool/cron.
 
-[crontab(5)](https://www.man7.org/linux/man-pages/man5/crontab.5.html)
-[anacrontab(5)](https://www.man7.org/linux/man-pages/man5/anacrontab.5.html)
+[crontab(5)](https://man7.org/linux/man-pages/man5/crontab.5.html)
+[anacrontab(5)](https://man7.org/linux/man-pages/man5/anacrontab.5.html)
 file format manuals.
 
 - Debian uses [Vixie cron](https://salsa.debian.org/debian/cron) and [anacron](https://salsa.debian.org/debian/anacron) in separate repositories.\

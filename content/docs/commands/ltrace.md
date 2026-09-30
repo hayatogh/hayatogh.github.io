@@ -27,5 +27,5 @@ ltrace -tttTS -o OUTPUT -p PID1 -p PID2 COMMAND
 ltrace -e '@libc.*' COMMAND
 ```
 
-[ltrace(1)](https://www.man7.org/linux/man-pages/man1/ltrace.1.html)\
+[ltrace(1)](https://man7.org/linux/man-pages/man1/ltrace.1.html)\
 FILTER EXPRESSIONS

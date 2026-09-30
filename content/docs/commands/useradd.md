@@ -37,11 +37,11 @@ read -rsp'Password: ' PLAIN
 printf $PLAIN | perl -le 'print crypt(<STDIN>, "\$y\$j9T\$SALT\$")'
 ```
 
-[passwd(5)](https://www.man7.org/linux/man-pages/man5/passwd.5@@shadow-utils.html)
-[shadow(5)](https://www.man7.org/linux/man-pages/man5/shadow.5.html)
+[passwd(5)](https://man7.org/linux/man-pages/man5/passwd.5@@shadow-utils.html)
+[shadow(5)](https://man7.org/linux/man-pages/man5/shadow.5.html)
 from shadow-utils
 
-[passwd(5)](https://www.man7.org/linux/man-pages/man5/passwd.5.html) from the man-pages project
+[passwd(5)](https://man7.org/linux/man-pages/man5/passwd.5.html) from the man-pages project
 
 [crypt(5)](https://manpages.debian.org/unstable/libcrypt-dev/crypt.5.en.html)
 [crypt(3)](https://manpages.debian.org/unstable/libcrypt-dev/crypt.3.en.html)

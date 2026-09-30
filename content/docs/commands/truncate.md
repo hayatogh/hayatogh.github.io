@@ -27,6 +27,6 @@ dd if=/dev/zero of=test.img bs=1M count=1024 oflag=direct
 # Synchronized I/O
 dd if=/dev/zero of=test.img bs=1M count=1024 oflag=sync
 ```
-[truncate(1)](https://www.man7.org/linux/man-pages/man1/truncate.1.html)
-[fallocate(1)](https://www.man7.org/linux/man-pages/man1/fallocate.1.html)
-[dd(1)](https://www.man7.org/linux/man-pages/man1/dd.1.html)
+[truncate(1)](https://man7.org/linux/man-pages/man1/truncate.1.html)
+[fallocate(1)](https://man7.org/linux/man-pages/man1/fallocate.1.html)
+[dd(1)](https://man7.org/linux/man-pages/man1/dd.1.html)

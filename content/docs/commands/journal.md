@@ -28,5 +28,5 @@ grep Storage /etc/systemd/journald.conf; ls -d /var/log/journal
 # Storage=auto is persistent if /var/log/journal directory exists
 ```
 
-[journalctl(1)](https://www.man7.org/linux/man-pages/man1/journalctl.1.html)
-[journald.conf(5)](https://www.man7.org/linux/man-pages/man5/journald.conf.5.html)
+[journalctl(1)](https://man7.org/linux/man-pages/man1/journalctl.1.html)
+[journald.conf(5)](https://man7.org/linux/man-pages/man5/journald.conf.5.html)

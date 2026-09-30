@@ -123,11 +123,11 @@ Now the remapping should be working!
 
 
 Hwdb examples are at
-[hwdb(7)](https://www.man7.org/linux/man-pages/man7/hwdb.7.html) and
+[hwdb(7)](https://man7.org/linux/man-pages/man7/hwdb.7.html) and
 [systemd/hwdb.d/70-mouse.hwdb](https://github.com/systemd/systemd/blob/main/hwdb.d/70-mouse.hwdb)
 
 Rules examples are at
-[udev(7)](https://www.man7.org/linux/man-pages/man7/udev.7.html) and
+[udev(7)](https://man7.org/linux/man-pages/man7/udev.7.html) and
 [systemd/rules.d/70-mouse.rules](https://github.com/systemd/systemd/blob/main/rules.d/70-mouse.rules)
 
-[udevadm(8)](https://www.man7.org/linux/man-pages/man8/udevadm.8.html)
+[udevadm(8)](https://man7.org/linux/man-pages/man8/udevadm.8.html)

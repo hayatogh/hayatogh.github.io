@@ -40,11 +40,11 @@ sar 0
 -W # Swap in/out
 ```
 
-[sar(1)](https://www.man7.org/linux/man-pages/man1/sar.1.html)
-[sa1(8)](https://www.man7.org/linux/man-pages/man8/sa1.8.html)
-[sa2(8)](https://www.man7.org/linux/man-pages/man8/sa2.8.html)
-[sadf(1)](https://www.man7.org/linux/man-pages/man1/sadf.1.html)
+[sar(1)](https://man7.org/linux/man-pages/man1/sar.1.html)
+[sa1(8)](https://man7.org/linux/man-pages/man8/sa1.8.html)
+[sa2(8)](https://man7.org/linux/man-pages/man8/sa2.8.html)
+[sadf(1)](https://man7.org/linux/man-pages/man1/sadf.1.html)
 
-[pidstat(1)](https://www.man7.org/linux/man-pages/man1/pidstat.1.html)
-[mpstat(1)](https://www.man7.org/linux/man-pages/man1/mpstat.1.html)
-[iostat(1)](https://www.man7.org/linux/man-pages/man1/iostat.1.html)
+[pidstat(1)](https://man7.org/linux/man-pages/man1/pidstat.1.html)
+[mpstat(1)](https://man7.org/linux/man-pages/man1/mpstat.1.html)
+[iostat(1)](https://man7.org/linux/man-pages/man1/iostat.1.html)

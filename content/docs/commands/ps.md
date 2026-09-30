@@ -93,6 +93,6 @@ PROCESS STATE CODES
                +    is in the foreground process group
 ```
 
-[ps(1)](https://www.man7.org/linux/man-pages/man1/ps.1.html)
+[ps(1)](https://man7.org/linux/man-pages/man1/ps.1.html)
 
 [Upstream Git](https://gitlab.com/procps-ng/procps)
