@@ -22,4 +22,9 @@ sed $'script' input
 
 # Replace /placeholder/ line with the content of content_file,
 printf '/placeholder/ { r content_file\n d }' | sed -f - input_file
+
+# Print until empty line
+sed -n '/^$/q; p' /proc/cpuinfo
+# Print after found empty line
+sed '/^$/q' /proc/cpuinfo
 ```

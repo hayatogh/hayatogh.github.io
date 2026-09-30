@@ -47,6 +47,10 @@ END {
 	print sum
 }
 ' $(ls file_* | sort -V)
+
+
+# Print until empty line
+awk '/^$/{exit} //' /proc/cpuinfo
 ```
 
 [gawk(1)](https://www.man7.org/linux/man-pages/man1/gawk.1.html)
