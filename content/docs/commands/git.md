@@ -11,17 +11,29 @@ weight: 1
 # bookIcon: ''
 ---
 
+## Inspecting subcommands
+
 ```bash
-# Inspecting commands
 # Blame with detecting moved lines between files
 git blame -C /path/to/file
 # Blame again with just before the revision REV
 git blame -C REV^ /path/to/file
 
+# Show commit the number of occurrences of a string changed
+git log -S 'interesting_function'
+# Or with a regex
+git log -S 'interesting_(function|struct)' --pickaxe-regex
+
+# Show commit a regex matches to the added/deleted lines
+git log -G 'modified_(function|struct)'
+
 # Show branch containing a commit
 git branch -a --contains <commit>
+```
 
-# Miscellaneous commands
+# Miscellaneous subcommands
+
+```bash
 # Re-create commit with auto-staging modified or deleted files
 git commit -a --amend
 

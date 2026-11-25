@@ -14,6 +14,7 @@ draft: true
 
 
 ```bash
+# Install and auto-update kernel debug package
 sudo apt install linux-image-amd64-dbg
 # Or
 sudo dnf install kernel-debuginfo
